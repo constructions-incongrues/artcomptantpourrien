@@ -1,0 +1,46 @@
+<html>
+    <head>
+        <title>!! INTRUSION DÉTECTÉE !!</title>
+        <style>
+            @font-face {
+               font-family: ComputerPixel;
+                src: url('font/computer_pixel-7.ttf');
+            }
+            body {
+                background-color: black;
+                text-align: center;
+                color: greenyellow;
+                font-family: "ComputerPixel";
+                font-size: 3em;
+            }
+            div.main {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            }
+        </style>
+<script>
+
+    const answer = 'bandit'
+    document.addEventListener("DOMContentLoaded", function() {
+        document.getElementById('form').addEventListener('submit', function(event) {
+            event.preventDefault()
+            if (document.getElementById('text').value.toLowerCase() == answer) {
+                document.location.replace('5')
+            } else {
+                document.getElementById('error').style.display = 'block';
+            }
+        })
+    })
+</script>
+
+<body>
+    <h1>Qui est l'auteur du tableau "Big Brother", peint en 1984?</h1>
+    <div class="main">
+        <form id="form">
+            <input type="text" id="text">
+            <input type="submit">
+        </form>
+    </div>
+    <h1 id="error" style="color: red; display: none;">FAUX !</h1>
+</body>

@@ -1,0 +1,23 @@
+version: '3'
+
+services:
+  node:
+    build: .
+    command: ['./node_modules/.bin/serve', '--debug']
+    labels:
+      traefik.frontend.rule: "Host:artcontentpourrien.localhost"
+      traefik.port: "5000"
+    user: node
+    volumes:
+      - ./src:/usr/local/src
+
+  traefik:
+    command: --api --docker
+    image: traefik:1.7-alpine
+    labels:
+      traefik.frontend.rule: "Host:traefik.artcontentpourrien.localhost"
+      traefik.port: "8080"
+    ports:
+      - 80:80
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
