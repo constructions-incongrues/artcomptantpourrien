@@ -5,7 +5,7 @@ services:
     build: .
     command: ['./node_modules/.bin/serve', '--debug']
     labels:
-      traefik.frontend.rule: "Host:artcontentpourrien.localhost"
+      traefik.frontend.rule: "Host:artcomptantpourrien.localhost"
       traefik.port: "5000"
     user: node
     volumes:
@@ -15,7 +15,7 @@ services:
     command: --api --docker
     image: traefik:1.7-alpine
     labels:
-      traefik.frontend.rule: "Host:traefik.artcontentpourrien.localhost"
+      traefik.frontend.rule: "Host:traefik.artcomptantpourrien.localhost"
       traefik.port: "8080"
     ports:
       - 80:80
