@@ -1,6 +1,7 @@
 {
   "dependencies": {
     "face-api.js": "^0.20.0",
+    "howler": "^2.1.2",
     "serve": "^11.0.0",
     "typeit": "^6.0.3"
   }

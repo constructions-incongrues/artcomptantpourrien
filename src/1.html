@@ -27,8 +27,14 @@
             }
         </style>
         <script src="node_modules/typeit/dist/typeit.min.js"></script>
+        <script src="node_modules/howler/dist/howler.core.min.js"></script>
         <script>
             document.addEventListener("DOMContentLoaded", function() {
+                var sound = new Howl({
+                    src: ['audio/nostromo_boot.mp3']
+                });
+                sound.play();
+
                 new TypeIt('#text', {
                         speed: 100,
                         afterComplete: (instance) => {
@@ -41,7 +47,7 @@
                     .type("TENTATIVE D'ACCES A LA SALLE #2")
                     .pause(2500)
                     .delete()
-                    .type('ACCREDITATION 27B-6+ REQUISE')
+                    .type('ACCREDITATION 27B-6 REQUISE')
                     .pause(2500)
                     .delete()
                     .type('LANCEMENT DE LA PROCEDURE DE RECONNAISSANCE FACIALE')
