@@ -36,28 +36,35 @@
                 background-color:greenyellow;
             }
         </style>
-<script>
+        <script src="node_modules/howler/dist/howler.core.min.js"></script>
+        <script>
+            const answer = 'bandit'
+            document.addEventListener("DOMContentLoaded", function() {
+                var sound = new Howl({
+                    src: ['audio/im-sorry-dave.mp3']
+                });
+                document.getElementById('form').addEventListener('submit', function(event) {
+                    event.preventDefault()
+                    if (document.getElementById('text').value.toLowerCase() == answer) {
+                        document.location.replace('5.html')
+                    } else {
+                        document.getElementById('error').style.display = 'block';
+                        sound.stop();
+                        sound.play();
+                    }
+                })
+            })
+        </script>
+    </head>
 
-    const answer = 'bandit'
-    document.addEventListener("DOMContentLoaded", function() {
-        document.getElementById('form').addEventListener('submit', function(event) {
-            event.preventDefault()
-            if (document.getElementById('text').value.toLowerCase() == answer) {
-                document.location.replace('5.html')
-            } else {
-                document.getElementById('error').style.display = 'block';
-            }
-        })
-    })
-</script>
+    <body>
+        <h1>Qui est l'auteur du tableau "Big Brother", peint en 1984?</h1>
+        <div class="main">
+            <form id="form">
+                <input type="text" id="text" autocomplete="off" autofocus="autofocus">
+            </form>
+        </div>
+        <h1 id="error" style="color: red; display: none;">FAUX !</h1>
+    </body>
 
-<body>
-    <h1>Qui est l'auteur du tableau "Big Brother", peint en 1984?</h1>
-    <div class="main">
-        <form id="form">
-            <input type="text" id="text" autocomplete="off" autofocus="autofocus">
-            <input type="submit">
-        </form>
-    </div>
-    <h1 id="error" style="color: red; display: none;">FAUX !</h1>
-</body>
+</html>
