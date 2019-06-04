@@ -3,7 +3,20 @@
         <meta charset="UTF-8">
         <title>!! INTRUSION DÉTECTÉE !!</title>
         <script src="node_modules/typeit/dist/typeit.min.js"></script>
+        <script src="node_modules/howler/dist/howler.core.min.js"></script>
+        <script>
+            document.addEventListener("DOMContentLoaded", function() {
+                var sound = new Howl({
+                    src: ['audio/clapping.mp3']
+                });
+                sound.play();
+            });
+        </script>
         <style>
+            @font-face {
+                font-family: MaximumSecurity;
+                src: url('font/MAXIMUMSECURITY.ttf');
+            }
             body {
                 background-color: black;
                 text-align: center;
@@ -14,7 +27,13 @@
                 display: flex;
                 align-items: center;
                 justify-content: center;
-                height: 100%;
+                height: 70%;
+            }
+            p {
+                font-size: 5em;
+                color: black;
+                background-color: greenyellow;
+                padding: 0.3em;
             }
         </style>
 <body>
@@ -58,9 +77,7 @@
  :   \_``[]--[]|::::'\_;'     )-'..`._                 .-'\``:: ` .              \
   \___.>`''-.||:.__,'     SSt |_______`>              <_____:::.         . . \  _/
                                                             `+a:f:......jrei'''
-
-
         </pre>
-        <p>BRAVO ! VOUS POUVEZ PÉNÉTRER DANS LA SALLE</p>
     </div>
+    <p>BRAVO ! VOUS POUVEZ PENETRER DANS LA SALLE</p>
 </body>

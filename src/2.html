@@ -38,7 +38,7 @@
             await faceapi.loadFaceLandmarkModel(MODEL_URL)
             await faceapi.loadFaceRecognitionModel(MODEL_URL)
 
-            const labels = ['jeffclown']
+            const labels = ['jeffclown', 'macron']
             window.labeledFaceDescriptors = await Promise.all(
                 labels.map(async label => {
                     // fetch image data from urls and convert blob to HTMLImage element
